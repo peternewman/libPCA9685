@@ -27,6 +27,10 @@ libPCA9685 README
         The PCA9685demo example application allows the user to set each
         channel manually or press 'a' to activate automatic mode.
 
+        The olaclient example application uses the Open Lighting
+        Architecture to turn the host into a DMX512 receiver taking
+        input via E1.31 over TCP/IP.
+
         Copyright (c) 2016 - 2018 Scott Edlin
         edlins ta yahoo tod com
 
@@ -84,6 +88,13 @@ DEPENDENCIES
 
         Y
 
+        OLACLIENT
+
+        To build the olaclient, additional ola dependencies must be
+        installed.  For more information, see:
+
+        examples/olaclient/README.md
+
 
 CONNECTION
 
@@ -126,7 +137,7 @@ DOWNLOAD
 
         $ git clone https://github.com/edlins/libPCA9685
 
-        Or, to you clone the latest unreleased "develop" branch:
+        Or, to clone the latest unreleased "develop" branch:
 
         $ git clone -b develop https://github.com/edlins/libPCA9685
 
@@ -137,13 +148,20 @@ INSTALL
         library instead.
 
         To compile and install the library and examples from the location
-        where the "fetch" was run, execute:
+        where the "clone" was run, execute:
 
         $ cd libPCA9685 && mkdir build && cd build
         $ cmake ..
         $ make
         $ ctest
         $ sudo make install
+
+        Note that "make" will attempt not attempt to build olaclient.
+        In order to build olaclient execute:
+
+        $ make olaclient
+
+        See examples/olaclient/README.md for more information.
 
         This will install libPCA9685.so in your /usr/local/lib directory,
         and PCA9685.h in your /usr/local/include directory.

@@ -3,8 +3,11 @@
 
 ## [0.7] - unreleased
 ### Added
+- **examples/olaclient/**: example application for driving a PCA9685 via DMX512
 
 ### Changed
+- **CMakeLists.txt**: build olaclient but excluded from all, must `make olaclient`
+- **.travis.yml**: install libola-dev on Trusty, add `make olaclient`
 
 ### Removed
 
